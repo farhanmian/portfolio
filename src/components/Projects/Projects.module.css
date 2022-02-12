@@ -1,0 +1,40 @@
+.projects {
+  margin-top: 136px;
+  margin-bottom: 71px;
+}
+
+.innerContainer {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.projectsContainer {
+  margin-top: 80px;
+}
+.projectsContainer > div {
+  margin-bottom: 100px;
+}
+
+.project {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectTextContainer {
+  max-width: 400px;
+  text-align: start;
+}
+.projectTextContainer > :not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.projectImageContainer {
+  max-width: 470px;
+}
+
+.projectImg {
+  width: 100%;
+}
