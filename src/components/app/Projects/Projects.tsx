@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, makeStyles, Typography } from "@material-ui/core";
 import styles from "./Projects.module.css";
-import project1 from "../../assets/img/project-1.png";
+import project1 from "../../../assets/img/project-1.png";
+import project2 from "../../../assets/img/project-2.png";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 const useStyles = makeStyles({
   projectBtn: {
@@ -32,13 +36,40 @@ const projectData = [
   },
   {
     name: "Landing Page",
-    img: project1,
+    img: project2,
     text: "A Simple Landing Page create using Next.Js & MUI",
   },
 ];
 
 export default function Projects() {
   const classes = useStyles();
+
+  /**applying gsap animation */
+  useEffect(() => {
+    for (let i = 1; i < 5; i++) {
+      gsap.from(`#projectImage${i}`, {
+        x: "-50vw",
+        ease: "back",
+        duration: 2,
+        scrollTrigger: {
+          trigger: `#projectImage${i}`,
+          start: i === 1 ? "top bottom" : "top center",
+        },
+      });
+    }
+    for (let i = 1; i < 5; i++) {
+      gsap.from(`#projectTextContainer${i}`, {
+        x: "50vw",
+        ease: "back",
+        duration: 2,
+        scrollTrigger: {
+          trigger: `#projectTextContainer${i}`,
+          start: i === 1 ? "top bottom" : "top center",
+        },
+      });
+    }
+  }, []);
+
   return (
     <section className={styles.projects}>
       <div className={styles.innerContainer}>
@@ -49,7 +80,10 @@ export default function Projects() {
           {projectData.map((project, i) => {
             return (
               <div key={i} className={styles.project}>
-                <div className={styles.projectImageContainer}>
+                <div
+                  id={`projectImage${i + 1}`}
+                  className={styles.projectImageContainer}
+                >
                   <img
                     src={project.img}
                     alt="projectImg"
@@ -57,7 +91,10 @@ export default function Projects() {
                   />
                 </div>
 
-                <div className={styles.projectTextContainer}>
+                <div
+                  id={`projectTextContainer${i + 1}`}
+                  className={styles.projectTextContainer}
+                >
                   <Typography variant="h3">{project.name}</Typography>
 
                   <Typography variant="body2" color="textPrimary">

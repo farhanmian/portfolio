@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import Divider from "./components/Divider/Divider";
-import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
-import Projects from "./components/Projects/Projects";
+import About from "./components/app/About/About";
+import Divider from "./components/partials/Divider/Divider";
+import Header from "./components/app/Header/Header";
+import Nav from "./components/app/Nav/Nav";
+import Projects from "./components/app/Projects/Projects";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Header />
       <Divider />
       <Projects />
+      <Divider />
+      <About />
     </div>
   );
 }

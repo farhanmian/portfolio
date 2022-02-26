@@ -1,0 +1,31 @@
+.about {
+  margin-top: 136px;
+  margin-bottom: 135px;
+}
+
+.innerContainer {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textContainer {
+  max-width: 588px;
+  text-align: start;
+}
+
+.aboutme {
+  margin-bottom: 42px;
+}
+
+.skill {
+  margin-bottom: 32px;
+}
+.imageContainer {
+  width: 524px;
+  height: 524px;
+  border-radius: 50%;
+  background-color: #fdc435;
+}

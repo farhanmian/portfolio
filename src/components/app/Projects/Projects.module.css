@@ -1,6 +1,6 @@
 .projects {
   margin-top: 136px;
-  margin-bottom: 71px;
+  margin-bottom: 135px;
 }
 
 .innerContainer {
@@ -11,12 +11,12 @@
 .projectsContainer {
   margin-top: 80px;
 }
-.projectsContainer > div {
+.projectsContainer > :not(:last-child) {
   margin-bottom: 100px;
 }
 
 .project {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -32,7 +32,7 @@
 }
 
 .projectImageContainer {
-  max-width: 470px;
+  max-width: 480px;
 }
 
 .projectImg {
