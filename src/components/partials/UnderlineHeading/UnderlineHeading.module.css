@@ -1,0 +1,14 @@
+.displayFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.underline {
+  display: inline-block;
+  margin: auto;
+  margin-top: 4px;
+  width: 100px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fdc435;
+}

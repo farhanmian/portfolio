@@ -1,0 +1,37 @@
+.contact {
+  margin-top: 136px;
+  min-height: 100vh;
+  background-image: url("../../../assets/img/contact-img.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+
+.innerContainer {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.contactForm {
+  width: 400px;
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.contactForm > :not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.contactIconContainer {
+  margin: auto;
+  margin-top: 80px;
+  width: 192px;
+  display: flex;
+  align-items: center;
+}
+
+.contactIconContainer > :not(:last-child) {
+  margin-right: 24px;
+}

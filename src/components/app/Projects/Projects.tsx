@@ -5,6 +5,8 @@ import project1 from "../../../assets/img/project-1.png";
 import project2 from "../../../assets/img/project-2.png";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
+import UnderlineHeading from "../../partials/UnderlineHeading/UnderlineHeading";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const useStyles = makeStyles({
@@ -73,9 +75,7 @@ export default function Projects() {
   return (
     <section className={styles.projects}>
       <div className={styles.innerContainer}>
-        <Typography variant="h2" color="primary">
-          Projects
-        </Typography>
+        <UnderlineHeading heading="Projects" />
         <div className={styles.projectsContainer}>
           {projectData.map((project, i) => {
             return (
