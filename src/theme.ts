@@ -58,14 +58,14 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#25282B",
+      main: "#3F3D56",
     },
     secondary: {
-      main: "#FDC435",
+      main: "#fff",
     },
     text: {
-      primary: "#828282",
-      secondary: "#333",
+      primary: "#2F2E41",
+      secondary: "#fff",
     },
   },
 });

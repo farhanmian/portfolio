@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Typography, makeStyles } from "@material-ui/core";
 import styles from "./Header.module.css";
-import userImg from "../../../assets/img/header-img.png";
+import workingImg from "../../../assets/img/working.png";
 import { gsap } from "gsap";
 
 const useStyles = makeStyles({
@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   },
   nameHeading: {
     marginBottom: 32,
+    color: "#262534",
   },
 });
 
@@ -19,16 +20,9 @@ export default function Header() {
 
   /**applying gsap animation */
   useEffect(() => {
-    gsap.from("#headerImageContainer", {
-      y: -300,
-      x: "50vw",
-      duration: 1.8,
-      ease: "bounce",
-      delay: 0.8,
-    });
     gsap.from("#frontEndHeading", {
-      // x: "-50vw",
-      opacity: 0,
+      x: "-50vw",
+      // opacity: 0,
       duration: 1.5,
       delay: 0.8,
       ease: "back",
@@ -42,7 +36,7 @@ export default function Header() {
           <Typography
             id="frontEndHeading"
             variant="h6"
-            color="secondary"
+            style={{ color: "#6C63FF" }}
             className={classes.professionHeading}
           >
             Font-End Developer
@@ -63,8 +57,8 @@ export default function Header() {
           </Typography>
         </div>
 
-        <div id="headerImageContainer" className={styles.imageContainer}>
-          <img src={userImg} alt="img" className={styles.image} />
+        <div className={styles.imageContainer}>
+          <img src={workingImg} alt="img" />
         </div>
       </div>
     </header>

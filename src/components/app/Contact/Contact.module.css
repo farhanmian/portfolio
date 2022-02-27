@@ -1,10 +1,6 @@
 .contact {
   margin-top: 136px;
   min-height: 100vh;
-  background-image: url("../../../assets/img/contact-img.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-y: bottom;
 }
 
 .innerContainer {
@@ -12,10 +8,15 @@
   margin: auto;
 }
 
+.formContainer {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .contactForm {
   width: 400px;
-  margin: auto;
-  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -24,9 +25,24 @@
   margin-bottom: 24px;
 }
 
+.contactImageContainer {
+  width: 600px;
+}
+.contactImg {
+  width: 100%;
+}
+
+.contactWave {
+  width: 100%;
+  min-height: 455px;
+  background-image: url("../../../assets/img/contact-img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
 .contactIconContainer {
   margin: auto;
-  margin-top: 80px;
   width: 192px;
   display: flex;
   align-items: center;

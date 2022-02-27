@@ -1,13 +1,15 @@
 .nav {
   height: 56px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 99;
+  background-color: #3f3d56;
 }
 
 .innerContainer {
   margin: auto;
+  max-width: 1800px;
 }
 
 .linkContainer {

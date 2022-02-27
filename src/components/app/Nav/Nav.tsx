@@ -24,7 +24,7 @@ export default function Nav() {
             <Link key={link} href={`#${link}`} className={classes.link}>
               <Typography
                 variant="subtitle1"
-                color="primary"
+                color="secondary"
                 className={classes.linkText}
               >
                 {link}

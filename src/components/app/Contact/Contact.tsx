@@ -1,8 +1,9 @@
-import { Button, TextField, Typography, makeStyles } from "@material-ui/core";
-import { Instagram, LinkedIn, Twitter } from "@material-ui/icons";
 import React from "react";
+import { Instagram, LinkedIn, Twitter } from "@material-ui/icons";
+import { Button, TextField, Typography, makeStyles } from "@material-ui/core";
 import UnderlineHeading from "../../partials/UnderlineHeading/UnderlineHeading";
 import styles from "./Contact.module.css";
+import contactImg from "../../../assets/img/contact-me.png";
 
 const useStyles = makeStyles({
   submitBtn: {
@@ -29,6 +30,11 @@ const useStyles = makeStyles({
       transform: "scale(1.05)",
     },
   },
+  textField: {
+    "&>label": {
+      color: "#3F3D56",
+    },
+  },
 });
 
 const Contact = () => {
@@ -38,45 +44,60 @@ const Contact = () => {
       <div className={styles.innerContainer}>
         <UnderlineHeading heading="Contact me" />
 
-        <form className={styles.contactForm}>
-          <TextField
-            id="outlined-basic"
-            label="Name"
-            size="small"
-            fullWidth
-            variant="outlined"
-            required
-          />
-          <TextField
-            id="outlined-basic"
-            label="Email"
-            size="small"
-            fullWidth
-            variant="outlined"
-            required
-          />
-          <TextField
-            variant="outlined"
-            id="outlined-multiline-static"
-            label="Message"
-            fullWidth
-            multiline
-            rows={5}
-          />
+        <div className={styles.formContainer}>
+          <div className={styles.contactImageContainer}>
+            <img
+              src={contactImg}
+              alt="contact-me"
+              className={styles.contactImg}
+            />
+          </div>
+          <form className={styles.contactForm}>
+            <TextField
+              id="outlined-basic"
+              label="Name"
+              size="small"
+              fullWidth
+              className={classes.textField}
+              variant="outlined"
+              color="primary"
+              required
+            />
+            <TextField
+              id="outlined-basic"
+              label="Email"
+              size="small"
+              fullWidth
+              className={classes.textField}
+              variant="outlined"
+              color="primary"
+              required
+            />
+            <TextField
+              variant="outlined"
+              color="primary"
+              id="outlined-multiline-static"
+              label="Message"
+              fullWidth
+              className={classes.textField}
+              multiline
+              rows={5}
+            />
 
-          <Button
-            variant="contained"
-            color="secondary"
-            className={classes.submitBtn}
-            type="submit"
-            disableElevation
-          >
-            <Typography variant="subtitle1" color="primary">
-              Send
-            </Typography>
-          </Button>
-        </form>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.submitBtn}
+              type="submit"
+              disableElevation
+            >
+              <Typography variant="subtitle1">Send</Typography>
+            </Button>
+          </form>
+        </div>
+      </div>
 
+      <div className={styles.contactWave}>
         <div className={styles.contactIconContainer}>
           <Instagram fontSize="large" className={classes.contactIcon} />
           <LinkedIn fontSize="large" className={classes.contactIcon} />
