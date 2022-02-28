@@ -36,7 +36,7 @@ export default function Header() {
           <Typography
             id="frontEndHeading"
             variant="h6"
-            style={{ color: "#6C63FF" }}
+            color="textSecondary"
             className={classes.professionHeading}
           >
             Font-End Developer

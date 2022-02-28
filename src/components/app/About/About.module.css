@@ -4,7 +4,7 @@
 }
 
 .innerContainer {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -24,8 +24,12 @@
   margin-bottom: 32px;
 }
 .imageContainer {
-  width: 524px;
-  height: 524px;
-  border-radius: 50%;
-  background-color: #fdc435;
+  width: 874px;
+  height: 700px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.15);
 }

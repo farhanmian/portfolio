@@ -65,7 +65,7 @@ export const theme = createTheme({
     },
     text: {
       primary: "#2F2E41",
-      secondary: "#fff",
+      secondary: "#6C63FF",
     },
   },
 });

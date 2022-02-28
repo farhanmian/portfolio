@@ -1,6 +1,7 @@
-import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import styles from "./About.module.css";
+import { makeStyles, Typography } from "@material-ui/core";
+import skillTree from "../../../assets/img/skill-tree.png";
 
 const useStyles = makeStyles({
   heading: {
@@ -36,13 +37,19 @@ const About = () => {
             <Typography variant="h3" className={classes.heading}>
               Skills
             </Typography>
-            <Typography variant="h6" className={classes.skillText}>
+            <Typography
+              variant="h6"
+              className={classes.skillText}
+              color="primary"
+            >
               HTML5 CSS3 SCSS JavaScript React.Js React-Redux Next.Js TypeScript
               Material-UI GSAP Firebase Github.
             </Typography>
           </div>
         </div>
-        <div className={styles.imageContainer}></div>
+        <div className={styles.imageContainer}>
+          <img src={skillTree} alt="skill-tree" className={styles.img} />
+        </div>
       </div>
     </section>
   );
