@@ -55,7 +55,8 @@
   margin-right: 10px;
 }
 
-.projectBtn {
+.projectBtn,
+.disabledBtn {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -75,13 +76,23 @@
   transform: scale(1);
 }
 
-.activeProjectBtn::before {
+.activeProjectBtn::before,
+.disabledActiveBtn::before {
   content: "";
   display: block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: #373549;
+  transition: all 0.3s;
+}
+
+.disabledBtn {
+  border-color: #a1a1a1;
+}
+
+.disabledActiveBtn::before {
+  background-color: #a1a1a1;
 }
 
 @keyframes fadeIn {
