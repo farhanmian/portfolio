@@ -27,9 +27,10 @@ const About = () => {
 
             <Typography variant="body1" color="textPrimary">
               Hi, My name is Farhan Hussain and I have been learning web
-              development since 2 and very much dedicated to make myself gear up
-              with some professional skills. I prefer to keep learning, continue
-              challenging myself, and do interesting things that matter..
+              development since 2 years and very much dedicated to make myself
+              gear up with some professional skills. I prefer to keep learning,
+              continue challenging myself, and do interesting things that
+              matter..
             </Typography>
           </div>
 
