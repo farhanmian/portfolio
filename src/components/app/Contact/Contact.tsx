@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Instagram, LinkedIn, Twitter } from "@material-ui/icons";
-import { Button, TextField, Typography, makeStyles } from "@material-ui/core";
+import { ArrowUpward, GitHub, LinkedIn, Twitter } from "@material-ui/icons";
+import {
+  Button,
+  TextField,
+  Typography,
+  makeStyles,
+  Link,
+} from "@material-ui/core";
 import UnderlineHeading from "../../partials/UnderlineHeading/UnderlineHeading";
 import styles from "./Contact.module.css";
 import contactImg from "../../../assets/img/contact-me.png";
-import axios from "axios";
 import emailjs from "emailjs-com";
 import Loading from "../../partials/Loading/Loading";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const useStyles = makeStyles({
   submitBtn: {
@@ -38,6 +45,32 @@ const useStyles = makeStyles({
       color: "#3F3D56",
     },
   },
+  goBackToTop: {
+    minWidth: 48,
+    maxWidth: 48,
+    minHeight: 48,
+    maxHeight: 48,
+    borderRadius: "50%",
+    backgroundColor: "#6c63ff",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "fixed",
+    right: "1%",
+    bottom: "2%",
+    visibility: "hidden",
+    opacity: 0,
+    zIndex: 9999,
+    "&:hover": {
+      backgroundColor: "#524ad7",
+      "& svg": {
+        transform: "scale(1.1)",
+      },
+    },
+  },
+  arrowIcon: {
+    transition: "all .3s",
+  },
 });
 
 const Contact = () => {
@@ -49,6 +82,21 @@ const Contact = () => {
   const [showSentMsge, setShowSentMsge] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  /** applying gsap animaiton */
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 500",
+          end: "bottom 1500",
+          scrub: true,
+        },
+      })
+      .to("#goBackToTop", { opacity: 1, visibility: "visible" });
+  }, []);
+
   useEffect(() => {
     if (!showSentMsge) return;
 
@@ -58,7 +106,9 @@ const Contact = () => {
     () => clearTimeout(timeout);
   }, [showSentMsge]);
 
-  console.log(showSentMsge);
+  const goBackToTopHandler = () => {
+    document.querySelector("#intro")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const formSubmitHandler = (e: any) => {
     e.preventDefault();
@@ -68,53 +118,28 @@ const Contact = () => {
 
     console.log({ name: name, email: email, message: message });
     setIsLoading(true);
-
-    /**checking email is valid or invalid */
-    axios
-      .request({
-        method: "GET",
-        url: "https://zerobounce1.p.rapidapi.com/v2/validate",
-        params: {
-          ip_address: "replace_the_IP_address_the_email_signed_up_from",
-          email: email,
+    emailjs
+      .sendForm(
+        "service_s6fuggc",
+        "template_1g0izax",
+        e.target,
+        "FQCTnadYsGngOM4f8"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setShowSentMsge(true);
+          setIsLoading(false);
+          e.target.reset();
         },
-        headers: {
-          "x-rapidapi-host": "zerobounce1.p.rapidapi.com",
-          "x-rapidapi-key":
-            "917cc8094bmshadf39ef152f5f73p13ec07jsn8282e8aa694b",
-        },
-      })
-      .then(function (response) {
-        console.log(response.data.status);
-        // if valid status will be "valid"
-        if (response.data.status !== "valid") return setEmailError(true);
-        setEmailError(false);
-        emailjs
-          .sendForm(
-            "service_s6fuggc",
-            "template_1g0izax",
-            e.target,
-            "FQCTnadYsGngOM4f8"
-          )
-          .then(
-            (result) => {
-              console.log(result.text);
-              setShowSentMsge(true);
-              setIsLoading(false);
-              e.target.reset();
-            },
-            (error) => {
-              console.log(error.text);
-            }
-          );
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
-    <section className={styles.contact}>
+    <section id="contact" className={styles.contact}>
       <div className={styles.innerContainer}>
         <UnderlineHeading heading="Contact me" />
 
@@ -195,11 +220,28 @@ const Contact = () => {
         )}
       </div>
 
+      <Button
+        id="goBackToTop"
+        className={classes.goBackToTop}
+        onClick={goBackToTopHandler}
+      >
+        <ArrowUpward className={classes.arrowIcon} color="secondary" />
+      </Button>
+
       <div className={styles.contactWave}>
         <div className={styles.contactIconContainer}>
-          <Instagram fontSize="large" className={classes.contactIcon} />
-          <LinkedIn fontSize="large" className={classes.contactIcon} />
-          <Twitter fontSize="large" className={classes.contactIcon} />
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/in/farhan-mian-7aa5b21a3/"
+          >
+            <LinkedIn fontSize="large" className={classes.contactIcon} />
+          </Link>
+          <Link target="_blank" href="https://github.com/farhanmian">
+            <GitHub fontSize="large" className={classes.contactIcon} />
+          </Link>
+          <Link target="_blank" href="https://twitter.com/FarhanM0990">
+            <Twitter fontSize="large" className={classes.contactIcon} />
+          </Link>
         </div>
       </div>
     </section>

@@ -85,25 +85,6 @@ const projectData = [
     },
   },
   {
-    id: 4,
-    name: "Landing Page",
-    text: "A Simple Landing Page create using Next.Js & MUI",
-    url: "https://alivio-landing-page-bay.vercel.app/",
-    activeProjectBackground: {
-      background: `linear-gradient(
-      45deg,
-      #3f3d56 0%,
-      #353346 49%,
-      #17151f 50%,
-      transparent 50%
-    ),
-    url(${alivio})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPositionX: "right",
-    },
-  },
-  {
     id: 5,
     name: "Todo App",
     text: "A Todo App created using Next.Js, Redux, MUI, Firebase-SDK",
@@ -117,6 +98,25 @@ const projectData = [
       transparent 50%
     ),
     url(${todoApp})`,
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      backgroundPositionX: "right",
+    },
+  },
+  {
+    id: 4,
+    name: "Landing Page",
+    text: "A Simple Landing Page create using Next.Js & MUI",
+    url: "https://alivio-landing-page-bay.vercel.app/",
+    activeProjectBackground: {
+      background: `linear-gradient(
+      45deg,
+      #3f3d56 0%,
+      #353346 49%,
+      #17151f 50%,
+      transparent 50%
+    ),
+    url(${alivio})`,
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       backgroundPositionX: "right",
@@ -139,7 +139,7 @@ export default function Projects() {
   }, [activeProject, hover]);
 
   return (
-    <section className={styles.projects}>
+    <section id="projects" className={styles.projects}>
       <div className={styles.innerContainer}>
         <UnderlineHeading heading="Projects" />
         <div className={styles.projectsContainer}>

@@ -30,7 +30,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header id="intro" className={styles.header}>
       <div className={styles.innerContainer}>
         <div className={styles.textContainer}>
           <Typography

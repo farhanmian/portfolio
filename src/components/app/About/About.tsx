@@ -17,7 +17,7 @@ const useStyles = makeStyles({
 const About = () => {
   const classes = useStyles();
   return (
-    <section className={styles.about}>
+    <section id="about" className={styles.about}>
       <div className={styles.innerContainer}>
         <div className={styles.textContainer}>
           <div className={styles.aboutme}>
