@@ -4,15 +4,25 @@ import styles from "./Header.module.css";
 import workingImg from "../../../assets/img/working.png";
 import { gsap } from "gsap";
 
-const useStyles = makeStyles({
-  professionHeading: {
-    marginBottom: 12,
-    textTransform: "uppercase",
-  },
-  nameHeading: {
-    marginBottom: 32,
-    color: "#262534",
-  },
+const useStyles = makeStyles((theme) => {
+  return {
+    professionHeading: {
+      marginBottom: 12,
+      textTransform: "uppercase",
+    },
+    nameHeading: {
+      marginBottom: 32,
+      color: "#262534",
+      [theme.breakpoints.down(1200)]: {
+        fontSize: 54,
+      },
+    },
+    aboutText: {
+      [theme.breakpoints.down(1200)]: {
+        fontSize: 20,
+      },
+    },
+  };
 });
 
 export default function Header() {
@@ -51,14 +61,18 @@ export default function Header() {
             <br /> Farhan Hussain
           </Typography>
 
-          <Typography variant="body1" color="textPrimary">
+          <Typography
+            variant="body1"
+            color="textPrimary"
+            className={classes.aboutText}
+          >
             I have been learning web development since 2 years and very much
             dedicated to make myself gear up with some professional skills.
           </Typography>
         </div>
 
         <div className={styles.imageContainer}>
-          <img src={workingImg} alt="img" />
+          <img src={workingImg} alt="img" className={styles.image} />
         </div>
       </div>
     </header>

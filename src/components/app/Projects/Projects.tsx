@@ -12,19 +12,61 @@ import UnderlineHeading from "../../partials/UnderlineHeading/UnderlineHeading";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useStyles = makeStyles({
-  projectBtn: {
-    padding: 0,
-    width: 150,
-    minHeight: 43,
-    maxHeight: 43,
-    borderRadius: 24,
-    textTransform: "capitalize",
-  },
+const useStyles = makeStyles((theme) => {
+  return {
+    projectBtn: {
+      padding: 0,
+      width: 150,
+      minHeight: 43,
+      maxHeight: 43,
+      borderRadius: 24,
+      textTransform: "capitalize",
+      [theme.breakpoints.down(900)]: {
+        width: 120,
+        maxHeight: 37,
+        minHeight: 37,
+      },
+      [theme.breakpoints.down(800)]: {
+        width: 110,
+        maxHeight: 34,
+        minHeight: 34,
+      },
+    },
 
-  colore5e5e5: {
-    color: "#e5e5e5",
-  },
+    colore5e5e5: {
+      color: "#e5e5e5",
+    },
+    projectName: {
+      [theme.breakpoints.down(1200)]: {
+        fontSize: 35,
+      },
+      [theme.breakpoints.down(900)]: {
+        fontSize: 30,
+      },
+      [theme.breakpoints.down(900)]: {
+        fontSize: 28,
+      },
+    },
+    projectText: {
+      [theme.breakpoints.down(1200)]: {
+        fontSize: 16,
+      },
+      [theme.breakpoints.down(900)]: {
+        fontSize: 15,
+      },
+      [theme.breakpoints.down(800)]: {
+        fontSize: 14,
+      },
+    },
+    btnText: {
+      [theme.breakpoints.down(900)]: {
+        fontSize: 16,
+      },
+      [theme.breakpoints.down(800)]: {
+        fontSize: 14,
+      },
+    },
+  };
 });
 
 const projectData = [
@@ -33,94 +75,35 @@ const projectData = [
     name: "Ecommerce App",
     text: "A Ecommerce Web-App where user can create/delete a account, add item to cart/wishlist, ect. Web-App created with Next.Js, TS, MUI, Firebase.",
     url: "https://ecommerce-app-six.vercel.app/",
-    activeProjectBackground: {
-      background: `linear-gradient(
-      45deg,
-      #3f3d56 0%,
-      #353346 49%,
-      #17151f 50%,
-      transparent 50%
-    ),
-    url(${ecommerce})`,
-      backgroundPositionX: "300%",
-      backgroundSize: "contain",
-    },
+    img: ecommerce,
   },
   {
     id: 2,
     name: "Music App",
     text: "A Music Web-App where user have to login with there Spotify Account, but the user is only allowed to access the data if its email is enter in Spotify-Dashboard. Web-App created with Next.Js, TS, MUI.",
     url: "https://music-app-liard.vercel.app/",
-    activeProjectBackground: {
-      background: `linear-gradient(
-      45deg,
-      #3f3d56 0%,
-      #353346 49%,
-      #17151f 50%,
-      transparent 50%
-    ),
-    url(${musicApp})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPositionX: "right",
-    },
+    img: musicApp,
   },
   {
     id: 3,
     name: "Movie App",
     text: "A Movie Web-App where user can get information about Movies like :- description, cast, release date, rating, trailer, etc. Web-App created using React.Js & React-Redux.",
     url: "https://react-movie-49d4a.web.app/",
-    activeProjectBackground: {
-      background: `linear-gradient(
-      45deg,
-      #3f3d56 0%,
-      #353346 49%,
-      #17151f 50%,
-      transparent 50%
-    ),
-    url(${movieApp})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPositionX: "right",
-    },
+    img: movieApp,
   },
   {
     id: 5,
     name: "Todo App",
     text: "A Todo App created using Next.Js, Redux, MUI, Firebase-SDK",
     url: "https://todo-with-nextjs.vercel.app/",
-    activeProjectBackground: {
-      background: `linear-gradient(
-      45deg,
-      #3f3d56 0%,
-      #353346 49%,
-      #17151f 50%,
-      transparent 50%
-    ),
-    url(${todoApp})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPositionX: "right",
-    },
+    img: todoApp,
   },
   {
     id: 4,
     name: "Landing Page",
     text: "A Simple Landing Page create using Next.Js & MUI",
     url: "https://alivio-landing-page-bay.vercel.app/",
-    activeProjectBackground: {
-      background: `linear-gradient(
-      45deg,
-      #3f3d56 0%,
-      #353346 49%,
-      #17151f 50%,
-      transparent 50%
-    ),
-    url(${alivio})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPositionX: "right",
-    },
+    img: alivio,
   },
 ];
 
@@ -149,16 +132,22 @@ export default function Projects() {
                 <div
                   key={project.id}
                   className={styles.project}
-                  style={project.activeProjectBackground}
                   onMouseEnter={() => setHover(true)}
                   onMouseLeave={() => setHover(false)}
                 >
                   <div className={styles.projectTextContainer}>
-                    <Typography variant="h3" color="secondary">
+                    <Typography
+                      variant="h3"
+                      color="secondary"
+                      className={classes.projectName}
+                    >
                       {project.name}
                     </Typography>
 
-                    <Typography variant="body2" className={classes.colore5e5e5}>
+                    <Typography
+                      variant="body2"
+                      className={`${classes.colore5e5e5} ${classes.projectText} `}
+                    >
                       {project.text}
                     </Typography>
 
@@ -169,10 +158,22 @@ export default function Projects() {
                       className={classes.projectBtn}
                       color="secondary"
                     >
-                      <Typography variant="subtitle1" color="secondary">
+                      <Typography
+                        variant="subtitle1"
+                        color="secondary"
+                        className={classes.btnText}
+                      >
                         View Project
                       </Typography>
                     </Button>
+                  </div>
+
+                  <div className={styles.projectImageContainer}>
+                    <img
+                      src={project.img}
+                      alt="project-img"
+                      className={styles.projectImg}
+                    />
                   </div>
                 </div>
               )
