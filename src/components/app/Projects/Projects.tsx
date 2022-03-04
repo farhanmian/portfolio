@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => {
         maxHeight: 34,
         minHeight: 34,
       },
+      [theme.breakpoints.down(800)]: {
+        width: 100,
+        maxHeight: 30,
+        minHeight: 30,
+      },
     },
 
     colore5e5e5: {
@@ -42,9 +47,12 @@ const useStyles = makeStyles((theme) => {
       },
       [theme.breakpoints.down(900)]: {
         fontSize: 30,
+        lineHeight: "50px",
       },
-      [theme.breakpoints.down(900)]: {
+
+      [theme.breakpoints.down(600)]: {
         fontSize: 28,
+        lineHeight: "40px",
       },
     },
     projectText: {
@@ -57,6 +65,9 @@ const useStyles = makeStyles((theme) => {
       [theme.breakpoints.down(800)]: {
         fontSize: 14,
       },
+      [theme.breakpoints.down(600)]: {
+        fontSize: 12,
+      },
     },
     btnText: {
       [theme.breakpoints.down(900)]: {
@@ -64,6 +75,9 @@ const useStyles = makeStyles((theme) => {
       },
       [theme.breakpoints.down(800)]: {
         fontSize: 14,
+      },
+      [theme.breakpoints.down(600)]: {
+        fontSize: 12,
       },
     },
   };

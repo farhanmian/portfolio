@@ -165,4 +165,55 @@
   .projectTextContainer {
     max-width: 50%;
   }
+  .projectTextContainer > :not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .projectTextContainer > :not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .project {
+    height: 58vw;
+    background-image: none;
+  }
+  .projectTextContainer {
+    display: none;
+  }
+  .project:hover {
+    background: linear-gradient(135deg, #3f3d56 0%, #17151f 100%);
+  }
+  .project:hover .projectTextContainer {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .projectTextContainer {
+    max-width: 60%;
+  }
+  .projectTextContainer > :not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .projects {
+    margin-top: 100px;
+  }
+  .project {
+    height: 280px;
+  }
+  .projectTextContainer > :not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .projectTextContainer {
+    max-width: 90%;
+  }
 }

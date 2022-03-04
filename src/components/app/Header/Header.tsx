@@ -15,11 +15,23 @@ const useStyles = makeStyles((theme) => {
       color: "#262534",
       [theme.breakpoints.down(1200)]: {
         fontSize: 54,
+        lineHeight: "73px",
+      },
+      [theme.breakpoints.down(500)]: {
+        fontSize: 45,
+        lineHeight: "60px",
+      },
+      [theme.breakpoints.down(400)]: {
+        fontSize: 38,
+        lineHeight: "55px",
       },
     },
     aboutText: {
       [theme.breakpoints.down(1200)]: {
         fontSize: 20,
+      },
+      [theme.breakpoints.down(500)]: {
+        fontSize: 18,
       },
     },
   };

@@ -58,3 +58,12 @@
     width: 500px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .header {
+    margin-bottom: 99px;
+  }
+  .textContainer {
+    margin-left: 10px;
+  }
+}
