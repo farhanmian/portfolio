@@ -16,10 +16,8 @@
 
 .project {
   width: 100%;
+  /* min-width: 1400px; */
   height: 680px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 30px;
   background: linear-gradient(
     45deg,
@@ -31,13 +29,16 @@
   position: relative;
   border: 15px solid #3f3d56;
   box-sizing: border-box;
-  /* opacity: 0; */
-  /* animation: fadeIn 1.5s linear forwards; */
   transition: all 0.3s;
 }
 .projectTextContainer {
   text-align: start;
   max-width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
 .projectTextContainer > :not(:last-child) {
   margin-bottom: 30px;
@@ -183,14 +184,17 @@
   }
   .projectTextContainer {
     display: none;
+    pointer-events: none;
   }
   .project:hover {
     background: linear-gradient(135deg, #3f3d56 0%, #17151f 100%);
   }
   .project:hover .projectTextContainer {
-    display: block;
+    display: flex;
     margin: auto;
+    align-items: center;
     text-align: center;
+    animation: 1s allowPointer 0.2s forwards;
   }
   .projectTextContainer {
     max-width: 60%;
@@ -215,5 +219,11 @@
 @media only screen and (max-width: 400px) {
   .projectTextContainer {
     max-width: 90%;
+  }
+}
+
+@keyframes allowPointer {
+  100% {
+    pointer-events: all;
   }
 }

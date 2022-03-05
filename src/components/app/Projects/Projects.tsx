@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, makeStyles, Typography } from "@material-ui/core";
 import styles from "./Projects.module.css";
 import ecommerce from "../../../assets/img/ecommerce.png";
@@ -9,6 +9,7 @@ import todoApp from "../../../assets/img/todo-app.png";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import UnderlineHeading from "../../partials/UnderlineHeading/UnderlineHeading";
+import Slider from "react-slick";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -123,32 +124,26 @@ const projectData = [
 
 export default function Projects() {
   const classes = useStyles();
-  const [activeProject, setActiveProject] = useState(1);
-  const [hover, setHover] = useState(false);
 
-  useEffect(() => {
-    if (hover) return;
-    const timeout = setTimeout(() => {
-      setActiveProject((prev) => (prev === projectData.length ? 1 : prev + 1));
-    }, 5000);
-
-    return () => clearTimeout(timeout);
-  }, [activeProject, hover]);
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+  };
 
   return (
     <section id="projects" className={styles.projects}>
       <div className={styles.innerContainer}>
         <UnderlineHeading heading="Projects" />
         <div className={styles.projectsContainer}>
-          {projectData.map((project) => {
-            return (
-              project.id === activeProject && (
-                <div
-                  key={project.id}
-                  className={styles.project}
-                  onMouseEnter={() => setHover(true)}
-                  onMouseLeave={() => setHover(false)}
-                >
+          <Slider {...settings}>
+            {projectData.map((project) => {
+              return (
+                <div key={project.id} className={styles.project}>
                   <div className={styles.projectTextContainer}>
                     <Typography
                       variant="h3"
@@ -190,29 +185,9 @@ export default function Projects() {
                     />
                   </div>
                 </div>
-              )
-            );
-          })}
-
-          <div className={styles.projectBtnContainer}>
-            {projectData.map((item) => {
-              return (
-                <span
-                  key={item.id}
-                  className={`${
-                    !hover ? styles.projectBtn : styles.disabledBtn
-                  } ${
-                    item.id === activeProject
-                      ? !hover
-                        ? styles.activeProjectBtn
-                        : styles.disabledActiveBtn
-                      : ""
-                  } `}
-                  onClick={() => setActiveProject(item.id)}
-                />
               );
             })}
-          </div>
+          </Slider>
         </div>
       </div>
     </section>
