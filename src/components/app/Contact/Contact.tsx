@@ -1,8 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import contactImg from "../../../assets/img/about-9.jpg";
+import emailjs from "emailjs-com";
+import { Button, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  submitBtn: {
+    marginTop: 15,
+    width: 180,
+    height: 50,
+    borderRadius: 5,
+    border: "2px solid #f9004d",
+    textTransform: "uppercase",
+    letterSpacing: 2,
+    transition: "0.4s all ease",
+    "&>span": {
+      fontSize: 18,
+      fontFamily: "sans-serif",
+    },
+  },
+});
 
 function Contact() {
+  const classes = useStyles();
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSentMsge, setShowSentMsge] = useState(false);
+
+  const formSubmitHandler = (e: any) => {
+    e.preventDefault();
+    setIsLoading(true);
+    emailjs
+      .sendForm(
+        "service_s6fuggc",
+        "template_1g0izax",
+        e.target,
+        "FQCTnadYsGngOM4f8"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setShowSentMsge(true);
+          setIsLoading(false);
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <div className="contact component__space" id="Contact">
       <div className="container">
@@ -19,31 +65,43 @@ function Contact() {
                   <strong>farhanmian099@gmail.com.com</strong>
                 </p>
               </div>
-              <div className="input__box">
+              <form onSubmit={formSubmitHandler} className="input__box">
                 <input
                   type="text"
                   className="contact name"
-                  placeholder="Your name *"
+                  placeholder="Your name*"
+                  name="name"
+                  required
                 />
                 <input
-                  type="text"
+                  type="email"
                   className="contact email"
-                  placeholder="Your Email *"
+                  placeholder="Your Email*"
+                  name="email"
+                  required
                 />
                 <input
                   type="text"
                   className="contact subject"
-                  placeholder="Write a Subject"
+                  placeholder="Write a Subject*"
+                  name="subject"
+                  required
                 />
                 <textarea
                   name="message"
                   id="message"
-                  placeholder="Write Your message"
+                  placeholder="Write Your message*"
+                  required
                 ></textarea>
-                <button className="btn contact pointer" type="submit">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  className={classes.submitBtn}
+                  type="submit"
+                >
                   Submit
-                </button>
-              </div>
+                </Button>
+              </form>
             </div>
           </div>
           <div className="col__2 contact__img_container">

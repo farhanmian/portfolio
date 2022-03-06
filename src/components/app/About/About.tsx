@@ -2,7 +2,7 @@ import React from "react";
 import "./About.css";
 import aboutImg from "../../../assets/img/about.jpg";
 import { Button, makeStyles } from "@material-ui/core";
-import UpArrow from "../../icons/UpArrow";
+import { KeyboardArrowUp } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   resumeBtn: {
@@ -67,7 +67,7 @@ function About() {
       {/* UP TO TOP BTN */}
       <div className="up__to__top__btn">
         <a onClick={bottomToTopHandler} className="bottom__to__top">
-          <UpArrow />
+          <KeyboardArrowUp />
         </a>
       </div>
     </div>
