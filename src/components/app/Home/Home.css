@@ -124,8 +124,7 @@ li.sideNavbar {
     padding: 10px 0;
   }
   .header.active {
-    background-color: #191919e7;
-    backdrop-filter: blur(30px);
+    background-color: #191919;
   }
 
   h2.white.pz__10 {
