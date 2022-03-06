@@ -1,23 +1,19 @@
-import React from "react";
 import "./App.css";
+import React from "react";
 import About from "./components/app/About/About";
-import Divider from "./components/partials/Divider/Divider";
-import Header from "./components/app/Header/Header";
-import Nav from "./components/app/Nav/Nav";
-import Projects from "./components/app/Projects/Projects";
 import Contact from "./components/app/Contact/Contact";
+import Footer from "./components/app/Footer/Footer";
+import Home from "./components/app/Home/Home";
+import Project from "./components/app/Projects/Project";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Header />
-      <Divider />
-      <Projects />
-      <Divider />
+      <Home />
       <About />
-      <Divider />
+      <Project />
       <Contact />
+      <Footer />
     </div>
   );
 }
