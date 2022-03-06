@@ -1,5 +1,5 @@
 .home {
-  background-color: #070707;
+  background-color: #111717;
 }
 .nav__innerContainer,
 .home__content_innerContainer {
@@ -12,7 +12,7 @@
 }
 
 .home__bg {
-  background-image: url(../../../assets/img/bg.jpg);
+  background-image: url(../../../assets/img/bg1.png);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;

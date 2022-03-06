@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
-import contactImg from "../../../assets/img/about-9.jpg";
+import contactImg from "../../../assets/img/contact-img-2.jpg";
 import emailjs from "emailjs-com";
 import { Button, makeStyles } from "@material-ui/core";
 
@@ -52,7 +52,7 @@ function Contact() {
   return (
     <div className="contact component__space" id="Contact">
       <div className="container">
-        <div className="row">
+        <div className="row contact__container ">
           <div className="col__2">
             <div className="contact__box">
               <div className="contact__meta">
@@ -104,7 +104,7 @@ function Contact() {
               </form>
             </div>
           </div>
-          <div className="col__2 contact__img_container">
+          <div className="contact__img_container">
             <img src={contactImg} alt="" className="contact__img" />
           </div>
         </div>
