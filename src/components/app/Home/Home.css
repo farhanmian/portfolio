@@ -68,6 +68,23 @@ h4.home__text {
   width: 100%;
   display: none;
 }
+.navbar .media__links {
+  margin-left: auto;
+}
+.media__links > :not(:last-child) {
+  margin-right: 20px;
+}
+.media__links-icon {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.media__links-icon:hover {
+  transform: scale(1.1);
+}
+.sidebar .media__links {
+  margin-top: 10px;
+}
+
 ul.sidebar.d__flex {
   flex-wrap: wrap;
   height: 100%;
@@ -98,6 +115,9 @@ li.sideNavbar {
     display: flex;
   }
   .navbar li {
+    display: none;
+  }
+  .navbar .media__links {
     display: none;
   }
   .navigation {

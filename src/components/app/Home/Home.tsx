@@ -1,6 +1,10 @@
+import { Link } from "@material-ui/core";
+import { GitHub, LinkedIn, Twitter } from "@material-ui/icons";
 import React, { useState, useEffect } from "react";
 import Menu from "../../icons/Menu";
 import "./Home.css";
+
+const navLinks = ["Home", "About", "Portfolio", "Contact"];
 
 const Home = () => {
   // fixed Header
@@ -10,7 +14,6 @@ const Home = () => {
   });
   // Toogle Menu
   const [show, setShow] = useState(false);
-  const navLinks = ["Home", "About", "Portfolio", "Contact"];
   const [activeSection, setActiveSection] = useState("");
 
   // handling smooth scrolling
@@ -20,6 +23,31 @@ const Home = () => {
       .querySelector(`#${activeSection}`)
       ?.scrollIntoView({ behavior: "smooth" });
   }, [activeSection]);
+
+  const MediaLinks = () => {
+    return (
+      <div className="media__links d__flex">
+        <span className="media__links-icon">
+          <Link target="_blank" href="https://github.com/farhanmian">
+            <GitHub />
+          </Link>
+        </span>
+        <span className="media__links-icon">
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/in/farhan-mian-7aa5b21a3/"
+          >
+            <LinkedIn />
+          </Link>
+        </span>
+        <span className="media__links-icon">
+          <Link target="_blank" href="https://twitter.com/FarhanM0990">
+            <Twitter />
+          </Link>
+        </span>
+      </div>
+    );
+  };
 
   return (
     <div className="home" id="Home">
@@ -42,6 +70,8 @@ const Home = () => {
                     }}
                   />
                 </div>
+
+                <MediaLinks />
               </ul>
             </div>
 
@@ -59,6 +89,7 @@ const Home = () => {
                       </li>
                     );
                   })}
+                  <MediaLinks />
                 </ul>
               </div>
             ) : null}
