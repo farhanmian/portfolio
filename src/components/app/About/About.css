@@ -46,6 +46,19 @@ a.bottom__to__top.active {
     font-size: 15px !important;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  h1.about__heading {
+    font-size: 58px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  h1.about__heading {
+    font-size: 55px;
+    font-weight: 500;
+  }
+}
+
 @media only screen and (max-width: 425px) {
   button.about.btn.pointer {
     text-transform: capitalize;
@@ -53,5 +66,9 @@ a.bottom__to__top.active {
     height: 50px;
     font-size: 13px;
     transition: 0.4s ease;
+  }
+  h1.about__heading {
+    font-size: 48px;
+    font-weight: 500;
   }
 }

@@ -25,6 +25,21 @@ const useStyles = makeStyles((theme) => {
           fontSize: 16,
         },
       },
+      [theme.breakpoints.down(700)]: {
+        padding: "2px 10px",
+        "& > span": {
+          fontSize: 14,
+          fontWeight: 400,
+        },
+      },
+
+      [theme.breakpoints.down(600)]: {
+        padding: "2px 10px",
+        "& > span": {
+          fontSize: 16,
+          fontWeight: 500,
+        },
+      },
     },
   };
 });

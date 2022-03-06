@@ -2,6 +2,7 @@ import React from "react";
 import "./About.css";
 import aboutImg from "../../../assets/img/about.jpg";
 import { Button, makeStyles } from "@material-ui/core";
+import UpArrow from "../../icons/UpArrow";
 
 const useStyles = makeStyles({
   resumeBtn: {
@@ -18,6 +19,11 @@ function About() {
     const upToTop = document.querySelector("a.bottom__to__top");
     upToTop?.classList.toggle("active", window.scrollY > 0);
   });
+
+  const bottomToTopHandler = () => {
+    document.querySelector("#Home")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="about component__space" id="About">
       <div className="container">
@@ -44,10 +50,9 @@ function About() {
                 Material-UI, GSAP, API & AJAX and Firebase.
               </p>
               <div className="about__button d__flex align__items__center">
-                {/* <a href="#">
-                  <button className="about btn pointer">Download Resume</button>
-                </a> */}
                 <Button
+                  href="https://drive.google.com/file/d/1QjVaAKAu8vRLp6tGsEOSUKobKXZi1FxY/view"
+                  target="_blank"
                   className={classes.resumeBtn}
                   variant="contained"
                   color="secondary"
@@ -61,20 +66,8 @@ function About() {
       </div>
       {/* UP TO TOP BTN */}
       <div className="up__to__top__btn">
-        <a href="#" className="bottom__to__top">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-chevron-up white"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-            />
-          </svg>
+        <a onClick={bottomToTopHandler} className="bottom__to__top">
+          <UpArrow />
         </a>
       </div>
     </div>

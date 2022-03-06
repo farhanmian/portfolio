@@ -124,9 +124,38 @@ button.view__more:hover {
 
 @media only screen and (max-width: 700px) {
   h2.project__text {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 26px;
   }
   h4.project__text {
     margin-bottom: 10px;
+    line-height: 25px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h2.project__text {
+    font-size: 33px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  h4.project__text {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h2.project__text {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 10px;
+  }
+  h4.project__text {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 20px;
   }
 }
