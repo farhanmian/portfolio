@@ -43,7 +43,7 @@ p {
   color: #000 !important;
 }
 .lightGrey {
-  color: #ccc;
+  color: #ccc !important;
 }
 .d__flex {
   display: flex;

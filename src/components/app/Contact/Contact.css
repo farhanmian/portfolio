@@ -52,6 +52,18 @@ button.btn.contact.pointer {
   margin: 20px 0px;
 }
 
+.doneAllIcon {
+  opacity: 0;
+  transition: all 0.3s;
+  animation: 0.3s fadeIn linear forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
   .contact__img_container {
     max-width: 40%;

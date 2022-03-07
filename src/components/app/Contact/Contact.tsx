@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Contact.css";
 import contactImg from "../../../assets/img/contact-img-2.jpg";
 import emailjs from "emailjs-com";
 import { Button, makeStyles } from "@material-ui/core";
+import Loading from "../../partials/Loading/Loading";
+import { DoneAll } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   submitBtn: {
@@ -19,15 +21,28 @@ const useStyles = makeStyles({
       fontFamily: "sans-serif",
     },
   },
+  doneAllIcon: {
+    transition: "all .3s",
+  },
 });
 
 function Contact() {
   const classes = useStyles();
   const [isLoading, setIsLoading] = useState(false);
-  const [showSentMsge, setShowSentMsge] = useState(false);
+  const [isMessageDelivered, setIsMessageDelivered] = useState(true);
+
+  useEffect(() => {
+    if (!isMessageDelivered) return;
+
+    const timeout = setTimeout(() => {
+      setIsMessageDelivered(false);
+    }, 1800);
+    () => clearTimeout(timeout);
+  }, [isMessageDelivered]);
 
   const formSubmitHandler = (e: any) => {
     e.preventDefault();
+    if (isLoading) return;
     setIsLoading(true);
     emailjs
       .sendForm(
@@ -37,10 +52,9 @@ function Contact() {
         "FQCTnadYsGngOM4f8"
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          setShowSentMsge(true);
+        () => {
           setIsLoading(false);
+          setIsMessageDelivered(true);
           e.target.reset();
         },
         (error) => {
@@ -68,38 +82,54 @@ function Contact() {
               <form onSubmit={formSubmitHandler} className="input__box">
                 <input
                   type="text"
-                  className="contact name"
+                  className={`contact name ${isLoading ? "lightGrey" : ""} `}
                   placeholder="Your name*"
                   name="name"
                   required
+                  disabled={isLoading}
                 />
                 <input
                   type="email"
-                  className="contact email"
+                  className={`contact email ${isLoading ? "lightGrey" : ""} `}
                   placeholder="Your Email*"
                   name="email"
                   required
+                  disabled={isLoading}
                 />
                 <input
                   type="text"
-                  className="contact subject"
+                  className={`contact subject ${isLoading ? "lightGrey" : ""} `}
                   placeholder="Write a Subject*"
                   name="subject"
                   required
+                  disabled={isLoading}
                 />
                 <textarea
                   name="message"
+                  className={`${isLoading ? "lightGrey" : ""}`}
                   id="message"
                   placeholder="Write Your message*"
                   required
+                  disabled={isLoading}
                 ></textarea>
                 <Button
                   variant="contained"
                   color="secondary"
                   className={classes.submitBtn}
                   type="submit"
+                  disableRipple={isLoading}
                 >
-                  Submit
+                  {!isLoading ? (
+                    !isMessageDelivered ? (
+                      "Submit"
+                    ) : (
+                      <DoneAll
+                        className={`${classes.doneAllIcon} doneAllIcon `}
+                      />
+                    )
+                  ) : (
+                    <Loading />
+                  )}
                 </Button>
               </form>
             </div>
