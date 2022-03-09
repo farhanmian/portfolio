@@ -1,6 +1,5 @@
 import React from "react";
 import "./About.css";
-import aboutImg from "../../../assets/img/farhan.jpg";
 import { Button, makeStyles } from "@material-ui/core";
 import { KeyboardArrowUp } from "@material-ui/icons";
 

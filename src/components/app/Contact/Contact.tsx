@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Contact.css";
-import contactImg from "../../../assets/img/contact-img-2.jpg";
 import emailjs from "emailjs-com";
 import { Button, makeStyles } from "@material-ui/core";
 import Loading from "../../partials/Loading/Loading";
