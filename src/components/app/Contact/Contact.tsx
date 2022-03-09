@@ -66,7 +66,7 @@ function Contact() {
   return (
     <div className="contact component__space" id="Contact">
       <div className="container">
-        <div className="row contact__container ">
+        <div className="contact__container ">
           <div className="col__2">
             <div className="contact__box">
               <div className="contact__meta">
@@ -133,9 +133,6 @@ function Contact() {
                 </Button>
               </form>
             </div>
-          </div>
-          <div className="contact__img_container">
-            <img src={contactImg} alt="" className="contact__img" />
           </div>
         </div>
       </div>

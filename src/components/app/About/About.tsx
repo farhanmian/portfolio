@@ -27,39 +27,34 @@ function About() {
   return (
     <div className="about component__space" id="About">
       <div className="container">
-        <div className="row">
-          <div className="col__2">
-            <img src={aboutImg} alt="" className="about__img" />
-          </div>
-          <div className="col__2">
-            <h1 className="about__heading">About Me</h1>
-            <div className="about__meta">
-              <p className="about__text p__color">
-                Hi, I have been learning web development for 2 years now and
-                very much dedicated to make myself gear up with some
-                professional skills. Over All this time I have Sharpen my
-                skills, created many projects, and follow best practices.
-              </p>
-              <p className="about__text p__color">
-                I prefer to keep learning, continue challenging myself, and do
-                interesting things that matter.
-              </p>
-              <p className="about__text lightGrey">
-                My Skills: HTML5, CSS3, SCSS, Responsive Design, JavaScript,
-                React.Js, React-Redux, React-Router, Next.Js, TypeScript,
-                Material-UI, GSAP, API & AJAX and Firebase.
-              </p>
-              <div className="about__button d__flex align__items__center">
-                <Button
-                  href="https://drive.google.com/file/d/1QjVaAKAu8vRLp6tGsEOSUKobKXZi1FxY/view"
-                  target="_blank"
-                  className={classes.resumeBtn}
-                  variant="contained"
-                  color="secondary"
-                >
-                  Download Resume
-                </Button>
-              </div>
+        <div className="about__text-container ">
+          <h1 className="about__heading">About Me</h1>
+          <div className="about__meta">
+            <p className="about__text p__color">
+              Hi, I have been learning web development for 2 years now and very
+              much dedicated to make myself gear up with some professional
+              skills. Over All this time I have Sharpen my skills, created many
+              projects, and follow best practices.
+            </p>
+            <p className="about__text p__color">
+              I prefer to keep learning, continue challenging myself, and do
+              interesting things that matter.
+            </p>
+            <p className="about__text p__color lightGrey">
+              My Skills: HTML5, CSS3, SCSS, Responsive Design, JavaScript,
+              React.Js, React-Redux, React-Router, Next.Js, TypeScript,
+              Material-UI, GSAP, API & AJAX and Firebase.
+            </p>
+            <div className="about__button d__flex align__items__center">
+              <Button
+                href="https://drive.google.com/file/d/1QjVaAKAu8vRLp6tGsEOSUKobKXZi1FxY/view"
+                target="_blank"
+                className={classes.resumeBtn}
+                variant="contained"
+                color="secondary"
+              >
+                Download Resume
+              </Button>
             </div>
           </div>
         </div>

@@ -42,16 +42,29 @@ a.bottom__to__top {
 a.bottom__to__top.active {
   display: flex;
 }
+.about__text-container {
+  max-width: 50%;
+}
+
 /* RESPONSIVE */
 @media only screen and (max-width: 1024px) {
   .p__color {
     font-size: 15px !important;
   }
+  .about__text-container {
+    max-width: 80%;
+  }
+}
+
+@media only screen and(max-width: 800px) {
 }
 
 @media only screen and (max-width: 600px) {
   h1.about__heading {
     font-size: 58px;
+  }
+  .about__text-container {
+    max-width: 95%;
   }
 }
 @media only screen and (max-width: 500px) {

@@ -52,6 +52,10 @@ button.btn.contact.pointer {
   margin: 20px 0px;
 }
 
+.input__box {
+  max-width: 600px;
+}
+
 .doneAllIcon {
   opacity: 0;
   transition: all 0.3s;
