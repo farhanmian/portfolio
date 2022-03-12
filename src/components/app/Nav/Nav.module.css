@@ -1,0 +1,96 @@
+.nav {
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  /* background-color: #3f3d56; */
+  background-color: #191919;
+  padding: 10px;
+}
+
+.innerContainer {
+  margin: auto;
+  max-width: 1300px;
+  position: relative;
+}
+
+.linkContainer {
+  width: 498px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 120px;
+  margin-left: auto;
+}
+
+.drawer {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(24, 24, 24);
+  top: 0;
+  right: -50%;
+  z-index: 99999;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: none;
+}
+.drawerInnerContainer {
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.drawerInnerContainer > :not(:last-child) {
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .linkContainer {
+    margin-right: 60px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .linkContainer {
+    margin-right: 60px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .linkContainer {
+    margin-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .linkContainer {
+    margin-right: 30px;
+  }
+  .drawer {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .nav {
+    padding: 10px 0;
+  }
+  .linkContainer {
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 0;
+  }
+  .drawer {
+    display: flex;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .drawer {
+    width: 220px;
+  }
+}

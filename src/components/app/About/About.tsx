@@ -1,71 +1,78 @@
 import React from "react";
-import "./About.css";
-import { Button, makeStyles } from "@material-ui/core";
-import { KeyboardArrowUp } from "@material-ui/icons";
+import styles from "./About.module.css";
+import { makeStyles, Typography } from "@material-ui/core";
+import Skills from "../../icons/Skills";
+import UnderlineHeading from "../../partials/UnderlineHeading/UnderlineHeading";
 
-const useStyles = makeStyles({
-  resumeBtn: {
-    textTransform: "capitalize",
-    padding: "10px 18px",
-    border: "2px solid #f9004d",
-  },
+const useStyles = makeStyles((theme) => {
+  return {
+    heading: {
+      marginBottom: 12,
+    },
+    aboutHeading: {
+      [theme.breakpoints.down(1200)]: {
+        fontSize: 40,
+      },
+    },
+    skillHeading: {
+      [theme.breakpoints.down(1200)]: {
+        fontSize: 35,
+      },
+    },
+    skillText: {
+      color: "#f3f3f3",
+    },
+    aboutText: {
+      [theme.breakpoints.down(600)]: {
+        fontSize: 20,
+      },
+    },
+  };
 });
 
-function About() {
+const About = () => {
   const classes = useStyles();
-
-  window.addEventListener("scroll", function () {
-    const upToTop = document.querySelector("a.bottom__to__top");
-    upToTop?.classList.toggle("active", window.scrollY > 0);
-  });
-
-  const bottomToTopHandler = () => {
-    document.querySelector("#Home")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <div className="about component__space" id="About">
-      <div className="container">
-        <div className="about__text-container ">
-          <h1 className="about__heading">About Me</h1>
-          <div className="about__meta">
-            <p className="about__text p__color">
-              Hi, I have been learning web development for 2 years now and very
-              much dedicated to make myself gear up with some professional
-              skills. Over All this time I have Sharpen my skills, created many
-              projects, and follow best practices.
-            </p>
-            <p className="about__text p__color">
+    <section id="about" className={styles.about}>
+      <div className={styles.innerContainer}>
+        <UnderlineHeading heading="About Me" />
+        <div className={styles.displayFlex}>
+          <div className={styles.textContainer}>
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              className={classes.aboutText}
+            >
+              Hi, My name is Farhan Hussain and I have been learning web
+              development since 2 years and very much dedicated to make myself
+              gear up with some professional skills.
+            </Typography>
+
+            <Typography
+              variant="body1"
+              color="textPrimary"
+              className={classes.aboutText}
+            >
               I prefer to keep learning, continue challenging myself, and do
-              interesting things that matter.
-            </p>
-            <p className="about__text p__color lightGrey">
-              My Skills: HTML5, CSS3, SCSS, Responsive Design, JavaScript,
+              interesting things that matter..
+            </Typography>
+
+            <Typography
+              variant="body1"
+              className={`${classes.skillText} ${classes.aboutText}`}
+            >
+              My Skills :- HTML5, CSS3, SCSS, Responsive Design, JavaScript,
               React.Js, React-Redux, React-Router, Next.Js, TypeScript,
               Material-UI, GSAP, API & AJAX and Firebase.
-            </p>
-            <div className="about__button d__flex align__items__center">
-              <Button
-                href="https://drive.google.com/file/d/1QjVaAKAu8vRLp6tGsEOSUKobKXZi1FxY/view"
-                target="_blank"
-                className={classes.resumeBtn}
-                variant="contained"
-                color="secondary"
-              >
-                Download Resume
-              </Button>
-            </div>
+            </Typography>
+          </div>
+          <div className={styles.imageContainer}>
+            <Skills />
           </div>
         </div>
       </div>
-      {/* UP TO TOP BTN */}
-      <div className="up__to__top__btn">
-        <a onClick={bottomToTopHandler} className="bottom__to__top">
-          <KeyboardArrowUp />
-        </a>
-      </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default About;

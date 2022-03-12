@@ -1,0 +1,109 @@
+.projects {
+  margin-top: 136px;
+  margin-bottom: 135px;
+}
+
+.innerContainer {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.projectsContainer {
+  margin-top: 80px;
+  width: 100%;
+}
+
+.project {
+  max-width: 34%;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+  position: relative;
+}
+.projectOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+}
+.project:hover .projectImg {
+  transform: scale(1.04);
+}
+.project:hover .projectOverlay {
+  transition: all 0.05s;
+  transform: scale(1.04);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.projectImageContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+}
+
+.textContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.textContainer > :not(:last-child) {
+  margin-bottom: 30px;
+}
+.project:hover .textContainer {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 1000px) {
+  .project {
+    max-width: 40%;
+  }
+  .textContainer > :not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .project {
+    max-width: 45%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .textContainer > :not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .project {
+    max-width: 85%;
+  }
+  .textContainer > :not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .project {
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,213 @@
+.contact {
+  margin-top: 136px;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.innerContainer {
+  max-width: 1300px;
+  margin: auto;
+  z-index: 10;
+}
+
+.formContainer {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contactForm {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.contactForm > :not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.contactImageContainer {
+  height: 450px;
+}
+.contactImageContainer > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contactWave {
+  width: 100%;
+  min-height: 455px;
+  background-image: url("../../../assets/img/contact-img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  background-position: 50%;
+  z-index: -1;
+}
+
+.contactIconContainer {
+  margin: auto;
+  width: 192px;
+  display: flex;
+  align-items: center;
+}
+
+.contactIconContainer > :not(:last-child) {
+  margin-right: 24px;
+}
+
+/*///////////////// email sent successfully msge */
+
+.emailSentMsgeContainer {
+  background-color: #f9004d;
+  width: 300px;
+  position: fixed;
+  top: 15%;
+  right: -20%;
+  z-index: 999;
+  padding: 5px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 18% 50%);
+  animation: slideIn 4s ease-out forwards;
+}
+
+@keyframes slideIn {
+  25% {
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-height: 1200px) {
+  .contact {
+    min-height: 80vh;
+  }
+}
+
+@media only screen and (min-height: 1600px) {
+  .contact {
+    min-height: 65vh;
+  }
+}
+
+@media only screen and (min-height: 2000px) {
+  .contact {
+    min-height: 55vh;
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .contact {
+    padding-bottom: 160px;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  .contact {
+    padding-bottom: 280px;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .contact {
+    padding-bottom: 380px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .contactImageContainer {
+    height: 400px;
+  }
+  .emailSentMsgeContainer {
+    right: -30%;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-height: 1000px) {
+  .contact {
+    min-height: 65vh;
+    margin-bottom: 0;
+  }
+  .contactWave {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .contactImageContainer {
+    height: 350px;
+  }
+  .contactForm {
+    width: 350px;
+  }
+  .contactForm > :not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .emailSentMsgeContainer {
+    right: -50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .contactImageContainer {
+    display: none;
+  }
+  .contactForm {
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 800px) and (max-height: 1100px) {
+  .contactWave {
+    min-height: 300px;
+  }
+  .contact {
+    min-height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .emailSentMsgeContainer {
+    right: -60%;
+  }
+}
+
+@media only screen and (max-width: 600px) and (max-height: 800px) {
+  .contact {
+    padding-bottom: 200px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .contactImageContainer {
+    display: none;
+  }
+  .contactForm {
+    width: 85%;
+  }
+  .emailSentMsgeContainer {
+    right: -70%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contactForm {
+    width: 95%;
+  }
+  .emailSentMsgeContainer {
+    right: -80%;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .contactWave {
+    background-position: top;
+  }
+}
