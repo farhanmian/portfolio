@@ -254,6 +254,21 @@ const Contact = () => {
           </form>
         </div>
 
+        <div className={styles.contactIconContainer}>
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/in/farhan-mian-7aa5b21a3/"
+          >
+            <LinkedIn fontSize="large" className={classes.contactIcon} />
+          </Link>
+          <Link target="_blank" href="https://github.com/farhanmian">
+            <GitHub fontSize="large" className={classes.contactIcon} />
+          </Link>
+          <Link target="_blank" href="https://twitter.com/FarhanM0990">
+            <Twitter fontSize="large" className={classes.contactIcon} />
+          </Link>
+        </div>
+
         {showSentMsge && (
           <div id="msge" className={styles.emailSentMsgeContainer}>
             <Typography variant="subtitle1" color="primary">
@@ -271,22 +286,7 @@ const Contact = () => {
         <KeyboardArrowUp className={classes.arrowIcon} color="secondary" />
       </Button>
 
-      <div className={styles.contactWave}>
-        <div className={styles.contactIconContainer}>
-          <Link
-            target="_blank"
-            href="https://www.linkedin.com/in/farhan-mian-7aa5b21a3/"
-          >
-            <LinkedIn fontSize="large" className={classes.contactIcon} />
-          </Link>
-          <Link target="_blank" href="https://github.com/farhanmian">
-            <GitHub fontSize="large" className={classes.contactIcon} />
-          </Link>
-          <Link target="_blank" href="https://twitter.com/FarhanM0990">
-            <Twitter fontSize="large" className={classes.contactIcon} />
-          </Link>
-        </div>
-      </div>
+      <div className={styles.contactWave} />
     </section>
   );
 };

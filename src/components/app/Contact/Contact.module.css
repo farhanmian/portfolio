@@ -51,9 +51,14 @@
 
 .contactIconContainer {
   margin: auto;
-  width: 192px;
+  margin-top: 90px;
+  width: max-content;
   display: flex;
   align-items: center;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .contactIconContainer > :not(:last-child) {
@@ -106,12 +111,6 @@
 @media only screen and (max-height: 900px) {
   .contact {
     padding-bottom: 160px;
-  }
-}
-
-@media only screen and (max-height: 800px) {
-  .contact {
-    padding-bottom: 280px;
   }
 }
 
