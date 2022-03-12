@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
-import { Link, Typography, makeStyles, Button } from "@material-ui/core";
+import { Typography, makeStyles, Button } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { gsap } from "gsap";
 

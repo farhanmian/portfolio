@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import styles from "./Contact.module.css";
 import { GitHub, KeyboardArrowUp, LinkedIn, Twitter } from "@material-ui/icons";
 import {
   Button,
@@ -8,7 +9,6 @@ import {
   Link,
 } from "@material-ui/core";
 import UnderlineHeading from "../../partials/UnderlineHeading/UnderlineHeading";
-import styles from "./Contact.module.css";
 import emailjs from "emailjs-com";
 import Loading from "../../partials/Loading/Loading";
 import { gsap } from "gsap";
