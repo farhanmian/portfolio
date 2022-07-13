@@ -62,8 +62,9 @@ const About = () => {
               className={`${classes.skillText} ${classes.aboutText}`}
             >
               My Skills :- HTML5, CSS3, SCSS, Responsive Design, JavaScript,
-              React.Js, React-Redux, React-Router, Next.Js, TypeScript,
-              Material-UI, GSAP, API & AJAX and Firebase.
+              React.Js, React-Redux, React-Router, React-Native, Next.Js,
+              TypeScript, Material-UI, Tailwind-CSS, GSAP, API & AJAX and
+              Firebase.
             </Typography>
           </div>
           <div className={styles.imageContainer}>

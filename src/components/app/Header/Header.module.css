@@ -1,6 +1,6 @@
 .header {
   padding-top: 100px;
-  margin-bottom: 55px;
+  margin-bottom: 95px;
   background-color: #090909;
   padding-bottom: 80px;
 }
@@ -59,6 +59,15 @@
   .textContainer {
     margin-top: 100px;
     width: 500px;
+  }
+  .innerContainer {
+    min-height: 500px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    margin-bottom: 75px;
   }
 }
 

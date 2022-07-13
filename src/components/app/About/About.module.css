@@ -1,6 +1,6 @@
 .about {
-  margin-top: 136px;
-  margin-bottom: 135px;
+  margin-top: 96px;
+  margin-bottom: 95px;
 }
 
 .innerContainer {
@@ -81,6 +81,13 @@
 @media only screen and (max-width: 700px) {
   .textContainer {
     max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about {
+    margin-top: 76px;
+    margin-bottom: 75px;
   }
 }
 

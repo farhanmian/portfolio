@@ -1,6 +1,6 @@
 .projects {
-  margin-top: 136px;
-  margin-bottom: 135px;
+  margin-top: 96px;
+  margin-bottom: 95px;
 }
 
 .innerContainer {
@@ -99,6 +99,10 @@
   }
   .textContainer > :not(:last-child) {
     margin-bottom: 30px;
+  }
+  .projects {
+    margin-top: 76px;
+    margin-bottom: 75px;
   }
 }
 
