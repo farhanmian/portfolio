@@ -45,6 +45,9 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
+const resumeLink =
+  "https://drive.google.com/file/d/1phF6XDRuomyiwNOpXpc_KkEBtZ3elzHt/view?usp=sharing";
+
 export default function Nav() {
   const classes = useStyles();
   const navLinks = ["home", "about", "projects", "contact"];
@@ -79,7 +82,7 @@ export default function Nav() {
               </Typography>
             ))}
             <Typography
-              href="https://drive.google.com/file/d/1phF6XDRuomyiwNOpXpc_KkEBtZ3elzHt/view?usp=sharing"
+              href={resumeLink}
               target="_blank"
               variant="subtitle1"
               color="primary"
@@ -120,7 +123,7 @@ export default function Nav() {
               </Button>
             ))}
             <Button
-              href="https://drive.google.com/file/d/1QjVaAKAu8vRLp6tGsEOSUKobKXZi1FxY/view?usp=sharing"
+              href={resumeLink}
               target="_blank"
               className={classes.drawerBtn}
             >
