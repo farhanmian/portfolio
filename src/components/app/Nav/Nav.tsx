@@ -79,7 +79,7 @@ export default function Nav() {
               </Typography>
             ))}
             <Typography
-              href="https://drive.google.com/file/d/1NQp6U7VJiIX1MrMwAJOxcSVZ6nZ4yNp-/view?usp=sharing"
+              href="https://drive.google.com/file/d/1phF6XDRuomyiwNOpXpc_KkEBtZ3elzHt/view?usp=sharing"
               target="_blank"
               variant="subtitle1"
               color="primary"
