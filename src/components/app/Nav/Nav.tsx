@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => {
 });
 
 const resumeLink =
-  "https://drive.google.com/file/d/1phF6XDRuomyiwNOpXpc_KkEBtZ3elzHt/view?usp=sharing";
+  "https://drive.google.com/file/d/1bPHyq6qj2wOsqnEWDNOYO-jn9GXpxw5b/view?usp=sharing";
 
 export default function Nav() {
   const classes = useStyles();
